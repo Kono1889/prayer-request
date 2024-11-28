@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom"; // For navigation
 import "../App.css";
 import { app } from "../firebase";
 import { getDatabase, ref, set, push } from "firebase/database";
@@ -8,6 +9,8 @@ function User() {
   const messageRef = useRef();
   const [alertMessage, setAlertMessage] = useState(null);
   const [isError, setIsError] = useState(false); // State to check if the alert is an error
+
+  const navigate = useNavigate(); // React Router's navigation hook
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -39,7 +42,15 @@ function User() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
+    <div className="relative grid grid-cols-1 lg:grid-cols-2 h-screen">
+      {/* "Go to Admin" Button */}
+      <button
+        onClick={() => navigate("/admin")} // Navigate to the Admin page
+        className="absolute top-4 right-4 border border-black bg-black text-white hover:text-black px-4 py-2 rounded-md hover:bg-white transition-colors duration-300"
+      >
+        Go to Admin
+      </button>
+
       {/* Left Section with Background Image */}
       <div
         className="flex flex-col items-center justify-center bg-cover bg-center text-white p-8 h-1/2 lg:h-full"
