@@ -46,24 +46,24 @@ function User() {
       {/* "Go to Admin" Button */}
       <button
         onClick={() => navigate("/admin")} // Navigate to the Admin page
-        className="absolute top-4 right-4 border border-black bg-black text-white hover:text-black px-4 py-2 rounded-md hover:bg-white transition-colors duration-300"
+        className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white border border-black text-black text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md hover:bg-black hover:text-white transition-colors duration-300"
       >
         Go to Admin
       </button>
 
       {/* Left Section with Background Image */}
       <div
-        className="flex flex-col items-center justify-center bg-cover bg-center text-white p-8 h-1/2 lg:h-full"
+        className="flex flex-col items-center justify-center bg-cover bg-center text-white p-4 sm:p-8 h-[300px] lg:h-full"
         style={{
           backgroundImage: `url(${BackgroundImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <h1 className="text-3xl lg:text-4xl font-bold mb-4 drop-shadow-md text-center">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 drop-shadow-md text-center">
           Welcome to Our Platform
         </h1>
-        <p className="text-lg lg:text-xl text-gray-200 mb-6 drop-shadow-sm text-center leading-relaxed">
+        <p className="text-sm sm:text-lg lg:text-xl text-gray-200 mb-6 drop-shadow-sm text-center leading-relaxed">
           Drop your prayer requests, our dedicated team of prayer warriors will be standing in the gap for you.
         </p>
       </div>
@@ -71,12 +71,12 @@ function User() {
       {/* Right Section */}
       <div className="flex flex-col items-center justify-center text-center bg-white h-1/2 lg:h-full">
         <div>
-          <p className="text-lg lg:text-xl font-semibold mb-6">
+          <p className="text-sm sm:text-lg lg:text-xl font-semibold mb-6">
             You're Welcome to Prayer Request
           </p>
         </div>
 
-        <form onSubmit={handleSave} className="w-full max-w-sm md:max-w-md p-6">
+        <form onSubmit={handleSave} className="w-full max-w-xs sm:max-w-sm md:max-w-md p-6">
           <div>
             <textarea
               ref={messageRef}
