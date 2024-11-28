@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
-import '../App.css'; 
-import { app } from '../firebase';
-import { getDatabase, ref, set, push } from 'firebase/database';
-import BackgroundImage from '../assets/priscilla-du.jpg';
+import React, { useRef, useState } from "react";
+import "../App.css";
+import { app } from "../firebase";
+import { getDatabase, ref, set, push } from "firebase/database";
+import BackgroundImage from "../assets/priscilla-du.jpg";
 
 function User() {
   const messageRef = useRef();
@@ -39,31 +39,33 @@ function User() {
   };
 
   return (
-    <div className="grid grid-cols-2 h-screen">
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
       {/* Left Section with Background Image */}
       <div
-        className="flex flex-col items-center justify-center bg-cover bg-center text-white p-8"
+        className="flex flex-col items-center justify-center bg-cover bg-center text-white p-8 h-1/2 lg:h-full"
         style={{
           backgroundImage: `url(${BackgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <h1 className="text-4xl font-bold mb-4 drop-shadow-md text-center">
+        <h1 className="text-3xl lg:text-4xl font-bold mb-4 drop-shadow-md text-center">
           Welcome to Our Platform
         </h1>
-        <p className="text-xl text-gray-200 mb-6 drop-shadow-sm text-center leading-relaxed">
+        <p className="text-lg lg:text-xl text-gray-200 mb-6 drop-shadow-sm text-center leading-relaxed">
           Drop your prayer requests, our dedicated team of prayer warriors will be standing in the gap for you.
         </p>
       </div>
 
       {/* Right Section */}
-      <div className="flex flex-col items-center justify-center text-center bg-white">
+      <div className="flex flex-col items-center justify-center text-center bg-white h-1/2 lg:h-full">
         <div>
-          <p className="text-xl font-semibold mb-6">You're Welcome to Prayer Request</p>
+          <p className="text-lg lg:text-xl font-semibold mb-6">
+            You're Welcome to Prayer Request
+          </p>
         </div>
-        
-        <form onSubmit={handleSave} className="w-full max-w-md p-6">
+
+        <form onSubmit={handleSave} className="w-full max-w-sm md:max-w-md p-6">
           <div>
             <textarea
               ref={messageRef}
