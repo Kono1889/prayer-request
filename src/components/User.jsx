@@ -72,7 +72,7 @@ function User() {
       <div className="flex flex-col items-center justify-center text-center bg-white h-1/2 lg:h-full">
         <div>
           <p className="text-sm sm:text-lg lg:text-xl font-semibold mb-6">
-            You're Welcome to Prayer Request
+            Worship in Good Faith
           </p>
         </div>
 
