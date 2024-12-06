@@ -45,7 +45,7 @@ function User() {
     <div className="relative grid grid-cols-1 lg:grid-cols-2 h-screen">
       {/* "Go to Admin" Button */}
       <button
-        onClick={() => navigate("/admin")} // Navigate to the Admin page
+        onClick={() => navigate("/adminLogin")} // Navigate to the Admin page
         className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white border border-black text-black text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md hover:bg-black hover:text-white transition-colors duration-300"
       >
         Go to Admin
