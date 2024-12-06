@@ -13,7 +13,7 @@ console.log("Messaging Sender ID:", process.env.REACT_APP_FIREBASE_MESSAGING_SEN
 console.log("App ID:", process.env.REACT_APP_FIREBASE_APP_ID);
 
 const firebase = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: 'AIzaSyBEQyokho5TLlcMjjwiMcLXnqBYgUkigxk',
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   databaseURL:process.env.REACT_APP_FIREBASE_DATABASE_URL,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
