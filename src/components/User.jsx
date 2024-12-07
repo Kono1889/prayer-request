@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom"; // For navigation
+// import { useNavigate } from "react-router-dom"; // For navigation
 import "../App.css";
 import { app } from "../firebase";
 import { getDatabase, ref, set, push } from "firebase/database";
@@ -10,7 +10,7 @@ function User() {
   const [alertMessage, setAlertMessage] = useState(null);
   const [isError, setIsError] = useState(false); // State to check if the alert is an error
 
-  const navigate = useNavigate(); // React Router's navigation hook
+  // const navigate = useNavigate(); // React Router's navigation hook
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -44,12 +44,12 @@ function User() {
   return (
     <div className="relative grid grid-cols-1 lg:grid-cols-2 h-screen">
       {/* "Go to Admin" Button */}
-      <button
+      {/* <button
         onClick={() => navigate("/adminLogin")} // Navigate to the Admin page
         className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white border border-black text-black text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md hover:bg-black hover:text-white transition-colors duration-300"
       >
         Go to Admin
-      </button>
+      </button> */}
 
       {/* Left Section with Background Image */}
       <div
@@ -73,6 +73,9 @@ function User() {
         <div>
           <p className="text-sm sm:text-lg lg:text-xl font-semibold mb-6">
             Worship in Good Faith
+          </p>
+          <p className="text-sm text-gray-600 sm:text-lg lg:text-[0.9rem]">
+            Your prayers are anonymous feel free to share
           </p>
         </div>
 

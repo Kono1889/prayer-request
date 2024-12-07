@@ -18,7 +18,12 @@ const Admin = () => {
         const prayerList = Object.entries(snapshot.val()).map(([key, value]) => ({
           id: key, // Store unique Firebase key for deletion
           ...value,
-        }));
+        }))
+
+        .sort((a,b)=> b.timestamp - a.timestamp)
+
+        console.log('Fetched prayer request', prayerList.reverse())
+
         setPrayer(prayerList);
       } else {
         setError("No prayer requests found.");
@@ -66,7 +71,7 @@ const Admin = () => {
           prayer.map((item) => (
             <li
               key={item.id}
-              className="p-4 bg-gray-100 rounded-md shadow-md border border-gray-300 flex justify-between items-center"
+              className="p-4 bg-gray-100 rounded-md shadow-md border border-gray-300 flex justify-between items-start"
             >
               <div>
                 <p className="font-semibold">Message: {item.message}</p>
@@ -74,12 +79,13 @@ const Admin = () => {
                   Timestamp: {new Date(item.timestamp).toLocaleString()}
                 </p>
               </div>
-              <button
-                onClick={() => handleDelete(item.id)}
-                className="ml-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors duration-300"
-              >
-                Answered
-              </button>
+
+                <button
+                  onClick={() => handleDelete(item.id)}
+                  className="ml-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors duration-300"
+                >
+                  Answered
+                </button>
             </li>
           ))
         ) : (
