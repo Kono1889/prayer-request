@@ -75,7 +75,7 @@ function User() {
             Worship in Good Faith
           </p>
           <p className="text-sm text-gray-600 sm:text-lg lg:text-[0.9rem]">
-            Your prayers are anonymous feel free to share
+            Your prayer requests are anonymous and treated with confidentility 
           </p>
         </div>
 
