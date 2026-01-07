@@ -15,14 +15,15 @@ const Admin = () => {
 
       if (snapshot.exists()) {
         // Get prayer requests along with their keys
-        const prayerList = Object.entries(snapshot.val()).map(([key, value]) => ({
-          id: key, // Store unique Firebase key for deletion
-          ...value,
-        }))
+        const prayerList = Object.entries(snapshot.val())
+          .map(([key, value]) => ({
+            id: key, // Store unique Firebase key for deletion
+            ...value,
+          }))
 
-        .sort((a,b)=> b.timestamp - a.timestamp)
+          .sort((a, b) => b.timestamp - a.timestamp);
 
-        console.log('Fetched prayer request', prayerList.reverse())
+        console.log("Fetched prayer request", prayerList.reverse());
 
         setPrayer(prayerList);
       } else {
@@ -67,32 +68,30 @@ const Admin = () => {
 
       {/* Display prayer requests */}
       <ul className="space-y-4">
-        {prayer.length > 0 ? (
-          prayer.map((item) => (
-            <li
-              key={item.id}
-              className="p-4 bg-gray-100 rounded-md shadow-md border border-gray-300 flex justify-between items-start"
-            >
-              <div>
-                <p className="font-semibold">Message: {item.message}</p>
-                <p className="text-sm text-gray-600">
-                  Timestamp: {new Date(item.timestamp).toLocaleString()}
-                </p>
-              </div>
+        {prayer.length > 0
+          ? prayer.map((item) => (
+              <li
+                key={item.id}
+                className="p-4 bg-gray-100 rounded-md shadow-md border border-gray-300 flex justify-between items-start"
+              >
+                <div>
+                  <p className="font-semibold">Message: {item.message}</p>
+                  <p className="text-sm text-gray-600">
+                    Timestamp: {new Date(item.timestamp).toLocaleString()}
+                  </p>
+                </div>
 
                 <button
-                  onClick={() => handleDelete(item.id)}
+                  // onClick={() => handleDelete(item.id)}
                   className="ml-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors duration-300"
                 >
                   Attended
                 </button>
-            </li>
-          ))
-        ) : (
-          !error && (
-            <p className="text-gray-500">No prayer requests available yet.</p>
-          )
-        )}
+              </li>
+            ))
+          : !error && (
+              <p className="text-gray-500">No prayer requests available yet.</p>
+            )}
       </ul>
     </div>
   );
